@@ -1,0 +1,142 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5d1729;
+    padding: 10px 5%;
+    color: white;
+}
+
+.nav-principal a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.banner-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 50px 5%;
+    min-height: 150px;
+    position: relative;
+}
+
+.imagen-hero-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: absolute;
+    right: 5%;
+}
+
+.contenido-hero button {
+    background-color: #d8434d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.juegos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px 5%;
+}
+
+.tarjeta-producto {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.encabezado-tarjeta {
+    background-color: #a4334a;
+    color: white;
+    margin: -15px -15px 10px -15px;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+
+.imagen-placeholder {
+    height: 80px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.enlace-accion {
+    display: block;
+    margin-top: 10px;
+    color: #a4334a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.separador {
+    margin: 30px 5%;
+    border-color: #ccc;
+}
+
+.novedades {
+    text-align: center;
+    padding: 20px 5% 50px;
+}
+
+.lista-productos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.item-producto {
+    width: 180px;
+    position: relative;
+}
+
+.item-grande {
+    width: 220px;
+    flex-basis: 100%;
+    margin-top: 20px;
+}
+
+.etiqueta {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background-color: #a4334a;
+    color: white;
+    padding: 2px 5px;
+    font-size: 0.7em;
+}
+
+.en-stock { background-color: #387b38; }
+.agotado { background-color: #999; }
+
+.precio {
+    font-weight: bold;
+    color: #a4334a;
+}
+
+.pie-pagina {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+}
