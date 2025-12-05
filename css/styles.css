@@ -32,6 +32,7 @@ body {
     padding: 50px 5%;
     min-height: 150px;
     position: relative;
+    overflow: hidden;
 }
 
 .imagen-hero {
@@ -40,6 +41,7 @@ body {
     background-color: #ccc;
     border-radius: 50%;
     position: absolute;
+    align-self: flex-end;
     right: 5%;
 }
 
@@ -82,6 +84,12 @@ body {
     height: 80px;
     background-color: #e0e0e0;
     margin-bottom: 10px;
+    transition: transform 0.2s ease-out
+}
+
+
+.imagen:hover{
+    transform: scale(120%);
 }
 
 .enlace-accion {
@@ -148,6 +156,8 @@ body {
     color: #a4334a;
 }
 
+/* PRODUCTOS, RELEVANTE */
+
 .producto-detalle {
     padding: 40px 5%;
     display: flex;
@@ -209,4 +219,58 @@ body {
     text-align: center;
     padding: 10px;
     font-size: 0.8em;
+}
+
+/* NECESARIO PARA EL JS */
+.contador-carrito {
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.btn-anadir-confirmado {
+    background-color: #2ecc71 !important;
+    cursor: default !important;
+}
+
+#btn-vaciar-carrito {
+    font-size: 1em; 
+    cursor: pointer;
+    padding: 0;
+    margin-right: 20px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+.slide {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    height: 150px;
+    padding: 0 40px; 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: white;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out; 
+}
+
+.slide.activo {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
 }
