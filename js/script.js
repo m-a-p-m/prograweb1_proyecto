@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // HAMBURGUESA MENU
+
+    const btnMenu = document.getElementById('btn-menu');
+    const navPrincipal = document.getElementById('nav-principal');
+
+    if (btnMenu && navPrincipal) {
+        btnMenu.addEventListener('click', () => {
+            navPrincipal.classList.toggle('activo-movil');
+        });
+    }
+
+    // BANNER
     const slides = document.querySelectorAll('.banner-hero .slide');
     let slideIndex = 0;
     const intervalo = 5000;
@@ -20,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(mostrarSiguienteSlide, intervalo);
     }
 
+    // CARRITO
     const contadorElement = document.getElementById('contador-carrito');
     const btnAnadir = document.getElementById('btn-anadir-carrito');
     const btnVaciar = document.getElementById('btn-vaciar-carrito');

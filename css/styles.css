@@ -11,6 +11,11 @@ body {
     background-color: #5d1729;
     padding: 10px 5%;
     color: white;
+    position: relative;
+}
+
+.nav-principal {
+    display: flex;
 }
 
 .nav-principal a {
@@ -170,6 +175,7 @@ body {
     height: 400px;
     background-color: #ccc;
     margin: 0;
+    flex-shrink: 0; 
 }
 
 .producto-info {
@@ -371,4 +377,124 @@ body {
 .btn-carrito {
     cursor: pointer; 
     user-select: none;
+}
+
+.about {
+    text-align: left; 
+    padding: 20px 5%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* MENU HAMBURGUESA Y TODO LO DE MOVIL */
+.menu-hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.nav-principal.activo-movil {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #5d1729;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 900;
+}
+
+.nav-principal.activo-movil a {
+    margin: 0;
+    padding: 10px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+@media (max-width: 900px) {
+    .producto-detalle {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .producto-imagen {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .nav-principal {
+        display: none;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+    }
+    
+    .acciones-usuario {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    #btn-vaciar-carrito {
+        display: none;
+    }
+
+    .banner-hero {
+        padding: 30px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        min-height: 100px;
+    }
+    
+    .slide {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px;
+        height: 100%;
+    }
+
+    .imagen-hero {
+        position: relative;
+        align-self: flex-start;
+        margin-top: 15px;
+        right: auto;
+    }
+    
+    .juegos-grid {
+        grid-template-columns: 1fr; 
+        padding: 15px 5%;
+    }
+
+    .lista-productos {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .item-producto {
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .item-producto .imagen-placeholder {
+        width: 100%;
+        height: 150px;
+    }
+
+    .producto-detalle {
+        padding: 20px 5%;
+    }
 }
