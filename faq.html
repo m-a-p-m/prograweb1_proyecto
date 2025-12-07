@@ -9,16 +9,74 @@
 <body>
 
     <header class="encabezado">
-        <span class="logo">STORERER</span>
+        <div class="logo">
+            <a href="index.html" style="color: white; text-decoration: none;">STORERER</a>
+        </div>
         <nav class="nav-principal">
-            <a href="#">Sobre Nosotros</a>
-            <a href="#">F.A.Q</a>
+            <a href="about.html">Sobre Nosotros</a>
+            <a href="faq.html">F.A.Q</a>
         </nav>
 
         <div class="acciones-usuario">
             <button id="btn-vaciar-carrito">Vaciar Carrito</button>
             <span id="contador-carrito" class="contador-carrito">0</span>
-            <span>CARRITO 🛒</span>
+            <span id="btn-mostrar-carrito" class="btn-carrito">CARRITO 🛒</span>
         </div>
 
     </header>
+
+    
+    <section>
+        <h1>Soporte</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ipsam maiores vero quibusdam quam aperiam cupiditate illum laboriosam molestias. Error, non odit labore doloremque qui nihil quisquam beatae numquam adipisci!</p>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>FAQ</h2>
+        <hr>
+        <p><strong>Ordenes y Cambios</strong></p>
+        
+        <details>
+        <summary>Cancelar orden</summary>
+        a</details>
+
+        <details>
+        <summary>Cambiar envio de orden</summary>
+        a</details>
+
+        <details>
+        <summary>Cambiar direccion de cambio de orden</summary>
+        a</details>
+    </section>
+
+    <section>
+        <h2>Contactanos</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam consectetur culpa cum corporis esse debitis, modi, molestias alias non quo necessitatibus in! Minus adipisci libero iste magni, vel laborum corporis.</p>
+    </section>
+
+    <footer class="pie-pagina">
+        <p>&copy; 2025 STORERER. Todos los derechos reservados.</p>
+    </footer>
+    
+    <div id="modal-carrito" class="modal-carrito">
+        <div class="modal-contenido">
+            <span class="modal-cerrar">&times;</span>
+            <h2>Contenido del Carrito</h2>
+            <ul id="lista-productos-carrito">
+                <li class="carrito-vacio-mensaje">El carrito está vacío.</li>
+            </ul>
+            <div class="modal-footer">
+                <p>Total: <span id="carrito-total">Bs. 0.00</span></p>
+                <button class="btn-comprar">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
