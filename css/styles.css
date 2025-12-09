@@ -4,6 +4,43 @@ body {
     background-color: #f0f0f0;
 }
 
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(-1deg); }
+    20% { transform: rotate(1deg); }
+    30% { transform: rotate(-1deg); }
+    40% { transform: rotate(1deg); }
+    50% { transform: rotate(0deg); }
+}
+
+@keyframes subtleShine {
+    0%, 100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0); }
+    50% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(216, 67, 77, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 5px rgba(216, 67, 77, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(216, 67, 77, 0);
+    }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+}
+
+@keyframes slightShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-1px); }
+    75% { transform: translateX(1px); }
+}
+
 .encabezado {
     display: flex;
     justify-content: space-between;
@@ -12,6 +49,7 @@ body {
     padding: 10px 5%;
     color: white;
     position: relative;
+    animation: subtleShine 4s infinite ease-in-out;
 }
 
 .nav-principal {
@@ -22,10 +60,18 @@ body {
     color: white;
     text-decoration: none;
     margin: 0 10px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-principal a:hover {
+    opacity: 0.8;
+    animation: slightShake 0.3s linear infinite;
 }
 
 .logo {
     font-weight: bold;
+    animation: shake 5s ease-in-out infinite;
+    display: inline-block;
 }
 
 .banner-hero {
@@ -48,6 +94,11 @@ body {
     position: absolute;
     align-self: flex-end;
     right: 5%;
+    transition: transform 0.3s ease; 
+}
+
+.imagen-hero:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .contenido-hero button {
@@ -64,6 +115,10 @@ body {
     transform: scale(0.98);
 }
 
+.contenido-hero button:active {
+    transform: scale(0.95);
+}
+
 .juegos-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -75,6 +130,13 @@ body {
     background-color: white;
     border: 1px solid #ccc;
     padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
 }
 
 .encabezado-tarjeta {
@@ -120,45 +182,61 @@ body {
     padding: 20px 5% 50px;
 }
 
-.lista-productos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; 
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.item-producto {
-    width: 180px;
-    position: relative;
-    text-align: center;
-}
-
-.item-producto .imagen-placeholder {
-    height: 80px;
-    background-color: #e0e0e0;
-    margin-bottom: 10px;
-    
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.etiqueta {
-    position: absolute;
-    top: -10px;
-    right: 0;
-    background-color: #a4334a;
-    color: white;
-    padding: 2px 5px;
-    font-size: 0.7em;
-}
-
-.en-stock { background-color: #387b38; }
-.agotado { background-color: #999;}
-
 .precio {
     font-weight: bold;
     color: #a4334a;
+}
+
+.en-stock {
+    background-color: #2ecc71; 
+    animation: pulseGlow 2s infinite; 
+    border-radius: 3px;
+}
+
+.agotado {
+    background-color: #888;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 2px 5px;
+    color: white;
+    font-size: 0.75em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.productos-relacionados {
+    padding: 20px 5%;
+}
+
+.lista-productos {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.item-producto {
+    min-width: 150px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-producto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.item-producto .imagen {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 /* PRODUCTOS, RELEVANTE */
@@ -192,6 +270,7 @@ body {
     color: #a4334a;
     font-weight: bold;
     margin: 15px 0;
+    animation: flicker 1.5s infinite alternate;
 }
 
 .producto-info button {
@@ -210,13 +289,8 @@ body {
     transform: scale(0.98);
 }
 
-.productos-relacionados {
-    padding: 20px 5%;
-    text-align: center;
-}
-.productos-relacionados h2 {
-    color: #5d1729;
-    margin-bottom: 30px;
+.producto-info button:active {
+    transform: scale(0.95);
 }
 
 .pie-pagina {
@@ -253,6 +327,11 @@ body {
     color: white;
     text-decoration: none;
     border: none;
+    transition: opacity 0.3s ease;
+}
+
+#btn-vaciar-carrito:hover {
+    opacity: 0.8;
 }
 
 .slide {
@@ -320,6 +399,7 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .modal-cerrar:hover,
@@ -368,10 +448,15 @@ body {
     cursor: pointer;
     margin-top: 10px;
     font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .btn-comprar:hover {
     background-color: #a4334a;
+}
+
+.btn-comprar:active {
+    transform: scale(0.98);
 }
 
 .btn-carrito {
