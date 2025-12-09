@@ -78,12 +78,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
     color: white;
     padding: 50px 5%;
     min-height: 150px;
     position: relative;
     overflow: hidden;
+}
+
+.banner-hero::before {
+    content: "";
+    background-image: url('img/pokered_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px); 
+    -webkit-filter: blur(8px);
 }
 
 .imagen-hero {
@@ -471,6 +485,30 @@ body {
     margin: 0 auto;
 }
 
+.faq-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.faq-content {
+    flex: 2; 
+    max-width: 65%;
+}
+
+.faq-image {
+    flex: 1; 
+    max-width: 35%; 
+    text-align: right;
+}
+
+.faq-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* MENU HAMBURGUESA Y TODO LO DE MOVIL */
 .menu-hamburguesa {
     display: none;
@@ -541,6 +579,17 @@ body {
         align-items: flex-start;
         text-align: left;
         min-height: 100px;
+    }
+
+    .banner-background {
+        background-image: url('img/bg/pokered_bg.jpg');
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        filter: blur(8px); 
+        -webkit-filter: blur(8px);
     }
     
     .slide {
